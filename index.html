@@ -5,18 +5,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prueba técnica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
 </head>
 
 <body>
     <header class="header">
         <h1 class="header__title">Método de Aproximación del punto medio</h1>
     </header>
-    <main>
-        <section class="">
+    <main class="main">
+        <form id="formulario" class="card formulario">
+            <div class="card__header">
+                <h3>Datos</h3>
+            </div>
+            <div class="form-group">
+                <label for="">Limite superior:</label>
+                <input type="text" id="limiteSuperior" name="limite_superior" required>
+            </div>
+            <div class="form-group">
+                <label for="">Limite inferior:</label>
+                <input type="text" id="limiteInferior" name="limite_inferior" required>
+            </div>
+            <div class="form-group">
+                <label for="">Objetivo:</label>
+                <input type="text" id="objetivo" name="objetivo" required>
+            </div>
+            <div class="form-group">
+                <label for="">Error:</label>
+                <input type="text" id="error" name="error" required>
+            </div>
+            <div class="form-submit">
+                <button type="submit" id="calcularPuntoMedio" class="btn">Calcular</button>
+            </div>
+        </form>
+        <section id="resultado" class="card resultados">
+            <div class="card__header">
+                <h3>Resultados</h3>
 
+            </div>
+            <div class="card__body">
+                <div class="totales">
+                    <div id="totalIteraciones"></div>
+                    <div id="resultadoFinal"></div>
+                </div>
+                <div class="table_responsive">
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>Limite Superior</th>
+                                <th>Limite Inferior</th>
+                                <th>Resultado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </section>
     </main>
     <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/acordion.js"></script>
+    <script>
+        const formPuntoMedio = document.querySelector('#formulario');
+
+        formPuntoMedio.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const {
+                limiteSuperior,
+                limiteInferior,
+                objetivo,
+                error
+            } = formPuntoMedio;
+            deleteAllRows();
+            calcularAproximacionPuntoMedio(limiteSuperior.value, limiteInferior.value, objetivo.value, error.value);
+        });
+    </script>
 </body>
 
 </html>

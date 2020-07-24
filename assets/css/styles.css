@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F4F6FC;
+    color: #2C3E50;
+    padding-bottom: 3rem;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 20vh;
+    padding: 0 1rem;
+}
+
+.header__title {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 90%;
+    min-height: 80vh;
+    margin: 0 auto;
+}
+
+
+/*CARD*/
+
+.card {
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+    border-radius: 8px;
+    padding: 0rem 1rem 2rem;
+    max-width: 600px;
+    background-color: #ffffff;
+}
+
+.card__header {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    grid-column: 1 / -1;
+}
+
+
+/*Fin del card*/
+
+
+/* Sección del formulario*/
+
+.formulario {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.angle_container {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    margin-bottom: .8rem;
+}
+
+.form-group input {
+    width: 100%;
+    height: 35px;
+    border: 1px #CFD8F4 solid;
+    color: #2C3E50;
+    border-radius: 4px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, .25);
+    padding: .3rem .8rem;
+}
+
+.form-group input:invalid {
+    box-shadow: 0px 1px 4px rgba(214, 69, 65, .25);
+}
+
+.form-group input:valid {
+    box-shadow: 0px 1px 4px rgb(0, 230, 64, .25);
+}
+
+.form-submit {
+    display: flex;
+    justify-content: flex-end;
+    grid-column: 1 / -1;
+}
+
+.btn {
+    background-color: #2C3E50;
+    color: #ffffff;
+    padding: .8rem 1.3rem;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, .25);
+    cursor: pointer;
+}
+
+
+/* Fin del formulario */
+
+
+/*Tabla*/
+
+.table_responsive {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+thead {
+    font-size: 13px;
+    background-color: #2C3E50;
+    color: #ffffff;
+}
+
+td,
+th {
+    padding: 15px 10px;
+    text-align: center;
+}
+
+table>tbody>tr:nth-child(2n+1) {
+    background-color: rgba(242, 242, 242, 0.5);
+}
+
+tr:last-child .cell_resultado:last-child {
+    background-color: #2C3E50;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+
+/*Sección de resultados */
+
+.totales {
+    display: flex;
+    justify-content: space-between;
+    padding: .7rem 0;
+}
+
+@media only screen and (min-width: 1020px) {
+    .main {
+        grid-template-columns: 1fr 1fr;
+    }
+    .formulario {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+}
